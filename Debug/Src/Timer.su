@@ -1,0 +1,4 @@
+../Src/Timer.c:29:6:Timer2_init	24	static
+../Src/Timer.c:74:6:Start_Timer2	4	static
+../Src/Timer.c:88:6:GPIOD_init	4	static
+../Src/Timer.c:102:6:LED_Toggle	8	static
