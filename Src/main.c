@@ -20,5 +20,15 @@ int main(void){
 
 	Timer2_output_compare_init(5, 'h');
 
+	while (1){
+
+		// wait till timer 2 is done
+
+		while(TIM2->SR & (1U << 1)){};
+		// toggle LED on Pin PA5
+
+		   GPIOA->ODR ^= (1U <<5);
+
+	}
 
 }
