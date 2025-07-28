@@ -1,0 +1,3 @@
+../Src/I2C.c:68:6:I2C_init	4	static
+../Src/I2C.c:109:6:GPIO_I2C_init	4	static
+../Src/I2C.c:169:6:read_Byte	24	static
