@@ -15,7 +15,7 @@ Tera Term
 ## Installation
 Clone this repository:
 
-git clone https://github.com/Asma-Prog-Eng/HSESYSCLK_8MHZ  <br />
+git clone https://github.com/Asma-Prog-Eng/HSE_SYSCLK_8MHZ  <br />
 Import project into STM32CubeIDE: <br /> File → Import... → Existing Projects into Workspace  <br />
 Rebuild project dependenciesFile
 ## Usage
