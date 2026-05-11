@@ -13,10 +13,11 @@
  *      Author: asmae
  */
 
-void SystemClockConfig(void);
-
 void UART2_Init(void);
 void Error_handler(void);
+void Print_Freq(void);
+void SYSCLK_Config(void);
+
 
 #include "stm32f1xx_hal.h"
 #include "msp.h"
@@ -25,59 +26,28 @@ void Error_handler(void);
 #include <stdio.h>
 #include <ctype.h>
 
+// uart struct. declaration
 UART_HandleTypeDef huart2;
+
+// RCC OSC struct. declaration
+RCC_OscInitTypeDef osc_init;
+
+// CLK Config struct. declaration
+RCC_ClkInitTypeDef clk_init;
+
+// data buffer
+char msg[100];
 
 int main(void){
 
-
-	RCC_OscInitTypeDef osc_init;
-	RCC_ClkInitTypeDef clk_init;
-	char msg[100];
 
 	// HAL library inits.
 	HAL_Init();
 
 	char *user_data = "\n\n*************** The application is running ***************\r\n\n";
 
-	// 1. Enable HSE SYSCLK and configure it as source clock
-
-	memset(&osc_init, 0, sizeof(osc_init));
-
-	osc_init.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-
-	osc_init.HSEState = RCC_HSE_ON  ;
-
-	if (HAL_RCC_OscConfig(&osc_init) != HAL_OK) {
-
-		 // there is a problem
-				 Error_handler();
-
-	};
-
-	// 2 . Configure AHB , APB1 AND APB2 Precsalers
-
-	memset(&clk_init, 0, sizeof(clk_init));
-
-	clk_init.ClockType = RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK \
-						| RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2 ;
-
-	clk_init.SYSCLKSource = RCC_SYSCLKSOURCE_HSE ;
-
-	clk_init.AHBCLKDivider = RCC_SYSCLK_DIV2 ;
-
-	clk_init.APB1CLKDivider = RCC_HCLK_DIV2 ;
-
-	clk_init.APB2CLKDivider = RCC_HCLK_DIV2 ;
-
-	HAL_RCC_ClockConfig(&clk_init, FLASH_ACR_LATENCY_0 );
-
-	__HAL_RCC_HSI_DISABLE(); // save some current
-
-	// Sysclk configuration
-
-	HAL_SYSTICK_Config( HAL_RCC_GetSysClockFreq()/1000);
-
-	HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+	// SYSCLK configuration
+	SYSCLK_Config();
 
 	// uart inits.
 	UART2_Init();
@@ -85,30 +55,82 @@ int main(void){
 	// send user data to the serial terminal
 	HAL_UART_Transmit(&huart2, (uint8_t*) user_data, (uint16_t) strlen(user_data), HAL_MAX_DELAY ) ;
 
-    // display SYSCLK Feq.
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "SYSCLK : %lu \r\n", HAL_RCC_GetSysClockFreq());
-	HAL_UART_Transmit(&huart2, (uint8_t*) msg,  strlen(msg), HAL_MAX_DELAY);
-
-	 // display HCLK Feq.
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "HCLK   : %lu \r\n",  HAL_RCC_GetHCLKFreq());
-	HAL_UART_Transmit(&huart2, (uint8_t*) msg,  strlen(msg), HAL_MAX_DELAY);
-
-	 // display PCLK1 Feq.
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "PCLK1  : %lu \r\n", HAL_RCC_GetPCLK1Freq());
-	HAL_UART_Transmit(&huart2, (uint8_t*) msg,  strlen(msg), HAL_MAX_DELAY);
-
-	 // display PCLK2 Feq.
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "PCLK2  : %lu \r\n", HAL_RCC_GetPCLK2Freq());
-	HAL_UART_Transmit(&huart2, (uint8_t*) msg,  strlen(msg), HAL_MAX_DELAY);
+	// display clk frequencies
+	Print_Freq();
 
     // reset board to restart the program by runnin infinite loop
     while(1) {;}
 
     return 0 ;
+
+}
+
+
+void SYSCLK_Config(void) {
+
+	// 1. Enable HSE SYSCLK and configure it as source clock
+
+		memset(&osc_init, 0, sizeof(osc_init));
+
+		osc_init.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+
+		osc_init.HSEState = RCC_HSE_ON  ;
+
+		if (HAL_RCC_OscConfig(&osc_init) != HAL_OK) {
+
+			 // there is a problem
+					 Error_handler();
+
+		};
+
+		// 2 . Configure AHB , APB1 AND APB2 Precsalers
+
+		memset(&clk_init, 0, sizeof(clk_init));
+
+		clk_init.ClockType = RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK \
+							| RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2 ;
+
+		clk_init.SYSCLKSource = RCC_SYSCLKSOURCE_HSE ;
+
+		clk_init.AHBCLKDivider = RCC_SYSCLK_DIV2 ;
+
+		clk_init.APB1CLKDivider = RCC_HCLK_DIV2 ;
+
+		clk_init.APB2CLKDivider = RCC_HCLK_DIV2 ;
+
+		HAL_RCC_ClockConfig(&clk_init, FLASH_ACR_LATENCY_0 );
+
+		__HAL_RCC_HSI_DISABLE(); // save some current
+
+		// Sysclk configuration
+
+		HAL_SYSTICK_Config( HAL_RCC_GetSysClockFreq()/1000);
+
+		HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+
+}
+
+void Print_Freq(void) {
+
+	    // display SYSCLK Feq.
+		memset(msg, 0, sizeof(msg));
+		sprintf(msg, "SYSCLK : %lu \r\n", HAL_RCC_GetSysClockFreq());
+		HAL_UART_Transmit(&huart2, (uint8_t*) msg,  strlen(msg), HAL_MAX_DELAY);
+
+		 // display HCLK Feq.
+		memset(msg, 0, sizeof(msg));
+		sprintf(msg, "HCLK   : %lu \r\n",  HAL_RCC_GetHCLKFreq());
+		HAL_UART_Transmit(&huart2, (uint8_t*) msg,  strlen(msg), HAL_MAX_DELAY);
+
+		 // display PCLK1 Feq.
+		memset(msg, 0, sizeof(msg));
+		sprintf(msg, "PCLK1  : %lu \r\n", HAL_RCC_GetPCLK1Freq());
+		HAL_UART_Transmit(&huart2, (uint8_t*) msg,  strlen(msg), HAL_MAX_DELAY);
+
+		 // display PCLK2 Feq.
+		memset(msg, 0, sizeof(msg));
+		sprintf(msg, "PCLK2  : %lu \r\n", HAL_RCC_GetPCLK2Freq());
+		HAL_UART_Transmit(&huart2, (uint8_t*) msg,  strlen(msg), HAL_MAX_DELAY);
 
 }
 
