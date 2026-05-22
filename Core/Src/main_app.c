@@ -149,9 +149,9 @@ void SYSCLK_Config(uint8_t clock_freq) {
 
 				osc_init.PLL.PLLMUL =  RCC_PLL_MUL15;
 
-				clk_init.APB2CLKDivider = RCC_HCLK_DIV2 ;
+				clk_init.AHBCLKDivider = RCC_HCLK_DIV2 ;
 
-				clk_init.APB2CLKDivider = RCC_HCLK_DIV2 ;
+				clk_init.APB1CLKDivider = RCC_HCLK_DIV2 ;
 
 				clk_init.APB2CLKDivider = RCC_HCLK_DIV2 ;
 
