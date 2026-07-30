@@ -1,0 +1,5 @@
+../Src/uart.c:35:6:UART2_init	8	static
+../Src/uart.c:87:6:uart2_write	16	static
+../Src/uart.c:102:6:uart2_read	4	static
+../Src/uart.c:115:6:uart_set_baudrate	24	static
+../Src/uart.c:122:10:compute_uart_BD	16	static
