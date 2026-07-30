@@ -1,0 +1,4 @@
+../Src/Sytick.c:22:6:Systick_init	1
+../Src/Sytick.c:33:6:Delay_configuration	2
+../Src/Sytick.c:59:6:GPIOD_init	1
+../Src/Sytick.c:74:6:LED_toggle	1
