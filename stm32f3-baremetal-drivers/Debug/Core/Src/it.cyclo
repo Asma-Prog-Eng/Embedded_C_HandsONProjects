@@ -1,0 +1,2 @@
+../Core/Src/it.c:48:6:SysTick_Handler	1
+../Core/Src/it.c:57:6:TIM2_IRQHandler	1
