@@ -1,0 +1,4 @@
+C:/Users/asmae/OneDrive/Bureau/STM32_Projects/Discovery_Board/ADC_Driver/CMSIS/core_cm4.h:1684:22:__NVIC_EnableIRQ	16	static,ignoring_inline_asm
+../Src/ADC.c:26:6:ADC1_Init	8	static,ignoring_inline_asm
+../Src/ADC.c:74:6:start_conversion	4	static
+../Src/ADC.c:89:6:GPIO_init	4	static
