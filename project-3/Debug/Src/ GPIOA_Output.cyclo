@@ -1,0 +1,2 @@
+../Src/ GPIOA_Output.c:21:6:GPIOA_Init	1
+../Src/ GPIOA_Output.c:71:6:LED_toggle	3
