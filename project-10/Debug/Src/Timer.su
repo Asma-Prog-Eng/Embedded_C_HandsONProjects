@@ -1,0 +1,2 @@
+../Src/Timer.c:33:6:Timer2_output_compare_init	24	static
+../Src/Timer.c:103:6:GPIOA_Init	4	static
