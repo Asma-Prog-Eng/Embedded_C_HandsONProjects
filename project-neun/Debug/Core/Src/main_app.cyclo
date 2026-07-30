@@ -1,0 +1,5 @@
+../Core/Src/main_app.c:41:5:main	1
+../Core/Src/main_app.c:69:6:SYSCLK_Config	2
+../Core/Src/main_app.c:113:6:Print_Freq	1
+../Core/Src/main_app.c:137:6:UART2_Init	2
+../Core/Src/main_app.c:157:6:Error_handler	1
