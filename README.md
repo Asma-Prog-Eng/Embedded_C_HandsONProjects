@@ -1,6 +1,6 @@
 # 🔌 Embedded C Hands-On Projects
 
-Welcome to my **Embedded C Hands-On Projects** repository! This repository serves as a centralized monorepo containing various bare-metal drivers, microcontroller peripheral implementations, and embedded software exercises written in C.
+Welcome to my **Embedded C Hands-On Projects** repository! This repository serves as a centralized monorepo containing various bare-metal drivers, microcontroller peripheral implementations, and code challenges exercises written in C.
 
 ---
 
@@ -43,9 +43,9 @@ Below is an overview of all the project folders inside this repository. Click on
 ## 🛠️ Toolchain & Environment
 
 * **Programming Language:** Embedded C (C99 / C11 standards)
-* **Architectures:** ARM Cortex-M, AVR, RISC-V *(customize as applicable)*
-* **IDEs & Compilers:** GCC ARM Toolchain, STM32CubeIDE, Keil uVision, VS Code
-* **Hardware Tools:** ST-LINK, Logic Analyzers, Oscilloscopes
+* **Architectures:** ARM Cortex-M, RISC-V 
+* **IDEs & Compilers:** GCC ARM Toolchain, GIT BASH, STM32CubeIDE, CodeBlocks
+* **Hardware Tools:** ST-LINK, Logic Analyzers, Multimeter
 
 ---
 
