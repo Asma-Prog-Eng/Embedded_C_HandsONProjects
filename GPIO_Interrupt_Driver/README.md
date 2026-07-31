@@ -37,10 +37,9 @@ Toggle LED4 : exti_callback()
 
 ## Troubleshooting
 
-No value could be read from on ADC1->DR:
-- Verify clock acess for ADC1 peripheral (RCC->APB2ENR register)
+Led is not toggling:
 - Verify clock acess for port A (RCC->APHBENR register)
-- Verify PA1 mode, should be configured to analog mode (GPIOA->MODER)
+- Verify PA1 mode, should be configured to ouput mode (GPIOA->MODER)
   
 ## Contributing
 Pull requests are welcome. For major changes, open an issue first.
