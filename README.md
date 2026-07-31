@@ -53,4 +53,4 @@ Below is an overview of all the project folders inside this repository. Click on
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/Asma-Prog-Eng/EmbeddedC_HandsONProjects.git](https://github.com/Asma-Prog-Eng/EmbeddedC_HandsONProjects.git)
+   git clone https://github.com/Asma-Prog-Eng/EmbeddedC_HandsONProjects.git
