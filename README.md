@@ -10,7 +10,7 @@ Below is an overview of all the project folders inside this repository. Click on
 
 | Folder / Project Name | Description | Target Hardware / Platform |
 | :--- | :--- | :--- |
-| **[`ADC_Interrupt_Driver`](./)** | *Bare metal ADC Driver in Interrupt mode Implementation | *STM32F103 / ARM Cortex-M3* |
+| **[`ADC_Interrupt_Driver`](./ADC_Interrupt_Driver/)** | *Bare metal ADC Driver in Interrupt mode Implementation | *STM32F103 / ARM Cortex-M3* |
 | **[`ADC_PLL_Driver`](./)** | *ADC Driver bare metal Implementation, PLL Clock Configuration )* | *STM32F103 / ARM Cortex-M3* |
 | **[`Client_Server_Socket`](./)** | *Basic Server-Client Socket Communication* | *CodeBlocks / Git bash* |
 | **[`GPIO_Interrupt_Driver`](./)** | *Bare metal GPIO Interrupt Handling | *STM32F411x  / ARM Cortex-M4* |
