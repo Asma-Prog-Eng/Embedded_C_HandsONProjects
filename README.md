@@ -20,7 +20,25 @@ Below is an overview of all the project folders inside this repository. Click on
 | **[`InputCapture_Timer_Driver`](./)** | *Bare metal InputCapture_Timer_Driver Implementation* | *STM32F4 / ARM Cortex-M4* |
 | **[`Multi-Threading`](./)** | *Safe Code Thread impementation* | *CodeBlocks / Git bash* |
 | **[`OutputCompare_Timer_Driver`](./)** | *Bare metal Output Compare Timer Driver  | *STM32F411x  / ARM Cortex-M4* |
----
+| **[`PLL_SYSCLK_HSI`](./)** | *SYSCLK Configuration using PLL | *STM32F103 / ARM Cortex-M3* |
+| **[`SPI_ADXL345_DRIVER`](./)** | *ADXl345 accelerometer data monitoring using SPI | *STM32F411x  / ARM Cortex-M4* |
+| **[`SYSTICK_DRIVER`](./)** | *SYSTICK Driver Implementation | *STM32F411x  / ARM Cortex-M4* |
+| **[`SPI_ADXL345_DRIVER`](./)** | *ADXl345 accelerometer data monitoring using SPI | *STM32F411x  / ARM Cortex-M4* |
+| **[`PLL_SYSCLK_HSI`](./)** | *SYSCLK Configuration using PLL | *STM32F103 / ARM Cortex-M3* |
+| **[`SYSCLK_Driver`](./)** | *SYSCLK Driver Implementation in polling mode| *STM32F103 / ARM Cortex-M3* |
+| **[`Systick_Interrupt_Driver`](./)** | *Super Loop Systick Driver Implementation| *STM32F103 / ARM Cortex-M3* |
+| **[`TIM2-HAL-Interrupt-Overhead-Benchmark`](./)** | *Timer 2 Driver in Dual Channel mode Implementation I| *STM32F103 / ARM Cortex-M3* |
+| **[`Timer_Driver`](./)** | *Bare Metal Timer 2 Driver Implementation | *STM32F411x  / ARM Cortex-M4* |
+| **[`Timer_Interrupt_Driver`](./)** | *Bare Metal Timer 2 Driver with Interrupt Handling Implementation I| *STM32F411x  / ARM Cortex-M4* |
+| **[`UART_Driver`](./)** | *Bare Metal UART Driver Implementation | *STM32F103 / ARM Cortex-M3* |
+| **[`UART_Example_IT`](./)** | *Super Loop Bare Metal UART Driver Implementation | *STM32F103 / ARM Cortex-M3* |
+| **[`UART_Rx_Interrupt_Driver`](./)** | *Super Loop UART Receiver Driver Implementation | *STM32F103 / ARM Cortex-M3* |
+| **[`stm32-hardware-pwm-led-dimmer`](./)** | *PWM Mode TIMER 2 Driver Implementation | *STM32F103 / ARM Cortex-M3* |
+| **[`stm32-multi-channel-waveform-generator`](./)** | *TIMER2 Based Waveform Generator Driver Implementation | *STM32F103 / ARM Cortex-M3* |
+| **[`stm32-timer-input-capture-measurement`](./)** | *Input-Capture Mode TIMER2 Driver Implementation | *STM32F103 / ARM Cortex-M3* |
+| **[`stm32-timer-interrupt-led`](./)** | *Super Loop TIMER2 Driver Implementation | *STM32F103 / ARM Cortex-M3* |
+| **[`stm32-timer-led-toggle`](./)** | *TIMER2 Driver, in polling mode, Implementation  | *STM32F103 / ARM Cortex-M3* |
+--- 
 
 ## 🛠️ Toolchain & Environment
 
