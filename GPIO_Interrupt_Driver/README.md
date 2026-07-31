@@ -34,12 +34,6 @@ Toggle LED4 : exti_callback()
 ├── Core<br />
 ├── Inc<br />  → GPIO_Interrupt.h <br />
 ├── Src<br /> →  GPIO_Interrupt.c<br /> → main.c
-
-## Troubleshooting
-
-Led is not toggling:
-- Verify clock acess for port A (RCC->APHBENR register)
-- Verify PA1 mode, should be configured to ouput mode (GPIOA->MODER)
   
 ## Contributing
 Pull requests are welcome. For major changes, open an issue first.
