@@ -1,4 +1,4 @@
-Bare metal implementation of an Output Comare Timer Driver  for STM32 development board 
+Bare metal implementation of an Output Compare Timer Driver  for STM32 development board 
 ## Features
 - TIMER2 initialization with peripheral clock = 16MHz.
 - Configurable delay mode : in Hz or in s
