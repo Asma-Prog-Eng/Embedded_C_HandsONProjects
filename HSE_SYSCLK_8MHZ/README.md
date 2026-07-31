@@ -1,5 +1,5 @@
 # HSE_SYSCLK_8MHZ
-Configure HSE as clock source using HAL APIs and print the relevant clock frequenies in the serial terminal,  for STM32 development board
+Configure HSE as clock source using HAL APIs and print the relevant clock frequencies in the serial terminal,  for STM32 development board
 ## Features
 UART2 initialization with baud rate = 115200 bps <br />
 SYSCLK is configured to 8 MHZ <br />
